@@ -18,10 +18,10 @@ if [ "$WORKERS" == "$default_list" ]
 then
     cfworkers=("soft-flower-7fac")
     for worker in "${cfworkers[@]}"; do
-        pwd
-        sed -i "s/ENVIRONMENT/$tag/" $filename
         echo $worker
         cd $worker
+        pwd
+        sed -i "s/ENVIRONMENT/$tag/" $filename
         for i in "${PREFIXES[@]}"; do
             replace=$i$tag
             eval replace='$'$replace
