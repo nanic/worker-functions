@@ -1,0 +1,9 @@
+name = "soft-flower-ENVIRONMENT"
+main = "src/index.js"
+compatibility_date = "2022-10-24"
+usage_model = "bundled"
+env = { }
+
+[vars]
+VARIABLE1 = "TEST_VARIABLE1"
+VARIABLE2 = "TEST_VARIABLE2"
