@@ -5,8 +5,8 @@ echo "$BRANCH"
 
 filename="wrangler.toml"
 
-tag=$(echo $BRANCH | tr '[:lower:]' '[:upper:]')
-tag="_${tag}"
+branch_name=$(echo $BRANCH | tr '[:lower:]' '[:upper:]')
+tag="_${branch_name}"
 echo $tag
 
 default_list="WORKER1;WORKER2"
@@ -21,7 +21,7 @@ then
         echo $worker
         cd $worker
         pwd
-        sed -i "s/ENVIRONMENT/$tag/" $filename
+        sed -i "s/ENVIRONMENT/$branch_name/" $filename
         for i in "${PREFIXES[@]}"; do
             replace=$i$tag
             eval replace='$'$replace
