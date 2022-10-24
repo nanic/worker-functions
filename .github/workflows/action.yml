@@ -35,15 +35,10 @@ jobs:
           #cache: 'npm'
           #cache-dependency-path: 'package-lock.json'
       
-      - name: Default user
-        run: whoami
-        
-      - name: test sudo
-        run: sudo apt update
-      
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Install wrangler
+        run: |
+          whoami
+          npm install -g wrangler
         
       - name: Get Branch name
         run: echo running on branch ${GITHUB_REF##*/}

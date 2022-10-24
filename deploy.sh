@@ -18,6 +18,7 @@ if [ "$WORKERS" == "$default_list" ]
 then
     cfworkers=("soft-flower-7fac")
     for worker in "${cfworkers[@]}"; do
+        pwd
         sed -i "s/ENVIRONMENT/$tag/" $filename
         echo $worker
         cd $worker
@@ -26,9 +27,6 @@ then
             eval replace='$'$replace
             sed -i "s/$i/$replace/" $filename
         done
-        #apikey="CLOUDFLARE_API_KEY"$tag
-        #eval key='$'$apikey
-        #CLOUDFLARE_API_TOKEN=$key wrangler publish
         CLOUDFLARE_API_TOKEN=$CF_KEY wrangler publish
         cd ..
     done
