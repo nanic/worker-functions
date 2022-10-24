@@ -21,7 +21,7 @@ then
         echo $worker
         cd $worker
         pwd
-        sed -i "s/ENVIRONMENT/$branch_name/" $filename
+        sed -i "s/ENVIRONMENT/$BRANCH/" $filename
         for i in "${PREFIXES[@]}"; do
             replace=$i$tag
             eval replace='$'$replace
